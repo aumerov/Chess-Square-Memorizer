@@ -15,9 +15,24 @@
   $: displayFiles = flipped ? [...files].reverse() : files;
   $: displayRanks = flipped ? [...ranks].reverse() : ranks;
 
-  const pieces: { [key: string]: string } = {
-    '♜': '♜', '♞': '♞', '♝': '♝', '♛': '♛', '♚': '♚', '♟': '♟',
-    '♖': '♖', '♘': '♘', '♗': '♗', '♕': '♕', '♔': '♔', '♙': '♙'
+  // Import SVG assets
+  import bK from './assets/bK.svg';
+  import bQ from './assets/bQ.svg';
+  import bR from './assets/bR.svg';
+  import bB from './assets/bB.svg';
+  import bN from './assets/bN.svg';
+  import bP from './assets/bP.svg';
+  import wK from './assets/wK.svg';
+  import wQ from './assets/wQ.svg';
+  import wR from './assets/wR.svg';
+  import wB from './assets/wB.svg';
+  import wN from './assets/wN.svg';
+  import wP from './assets/wP.svg';
+
+  // Map Unicode pieces to SVG assets
+  const pieceSvgs: { [key: string]: string } = {
+    '♚': bK, '♛': bQ, '♜': bR, '♝': bB, '♞': bN, '♟': bP,
+    '♔': wK, '♕': wQ, '♖': wR, '♗': wB, '♘': wN, '♙': wP
   };
 
   const initialBoard: { [key: string]: string } = {
@@ -75,7 +90,11 @@
           aria-label="Square {file}{rank}"
         >
           {#if showPieces && getPieceOnSquare(file, rank)}
-            <span class="piece">{getPieceOnSquare(file, rank)}</span>
+            <img 
+              src={pieceSvgs[getPieceOnSquare(file, rank)]} 
+              alt={getPieceOnSquare(file, rank)}
+              class="piece"
+            />
           {/if}
         </button>
       {/each}
@@ -137,10 +156,8 @@
     }
 
     .piece {
-      font-size: 28px;
-      font-family: 'Arial Unicode MS', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      width: 32px;
+      height: 32px;
     }
 
     .chess-board-container {
@@ -177,10 +194,8 @@
     }
 
     .piece {
-      font-size: 24px;
-      font-family: 'Arial Unicode MS', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      width: 28px;
+      height: 28px;
     }
 
     .coordinates {
@@ -209,9 +224,10 @@
   }
 
   .piece {
-    font-size: 40px;
-    line-height: 1;
+    width: 50px;
+    height: 50px;
     user-select: none;
+    pointer-events: none;
   }
 
   .coordinates {
