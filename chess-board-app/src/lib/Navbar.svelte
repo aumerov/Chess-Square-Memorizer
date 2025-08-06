@@ -22,11 +22,13 @@
     dispatch('toggleFlip', flipped);
   }
 
-  function handleRoundLengthChange(event) {
+  function handleRoundLengthChange(event: Event) {
     if (!gameActive) {
-      const value = event.target.value;
+      const value = (event.target as HTMLSelectElement).value;
       if (value === 'custom') {
         showCustomInput = true;
+        roundLength = customRoundLength;
+        dispatch('changeRoundLength', customRoundLength);
       } else {
         showCustomInput = false;
         roundLength = parseInt(value);
@@ -35,9 +37,9 @@
     }
   }
 
-  function handleCustomLengthBlur(event) {
+  function handleCustomLengthBlur(event: Event) {
     if (!gameActive) {
-      let value = parseInt(event.target.value);
+      let value = parseInt((event.target as HTMLInputElement).value);
       
       // Ensure it's a valid integer between 1 and 64
       if (isNaN(value) || value < 1) {
@@ -48,7 +50,7 @@
       
       customRoundLength = value;
       roundLength = value;
-      event.target.value = value; // Update the input field
+      (event.target as HTMLInputElement).value = value.toString(); // Update the input field
       dispatch('changeRoundLength', value);
     }
   }
