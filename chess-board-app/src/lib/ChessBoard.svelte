@@ -114,6 +114,10 @@
     border: none;
     cursor: pointer;
     transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
   }
 
   @media (max-width: 768px) {
@@ -126,10 +130,17 @@
     .square {
       width: 40px;
       height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
     }
 
     .piece {
       font-size: 28px;
+      font-family: 'Arial Unicode MS', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .chess-board-container {
@@ -159,10 +170,17 @@
     .square {
       width: 35px;
       height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
     }
 
     .piece {
       font-size: 24px;
+      font-family: 'Arial Unicode MS', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .coordinates {
