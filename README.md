@@ -29,6 +29,7 @@ Visit `http://localhost:5173` to start practicing chess coordinates.
 
 ### Prerequisites
 - Node.js 18+ (for Svelte app)
+- Python 3.13+ (future development)
 
 ### Setup
 1. Clone the repository
