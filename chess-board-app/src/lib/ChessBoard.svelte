@@ -139,6 +139,13 @@
     padding: 0;
   }
 
+  .piece {
+    width: 50px;
+    height: 50px;
+    user-select: none;
+    pointer-events: none;
+  }
+
   @media (max-width: 768px) {
     .chess-board {
       grid-template-columns: repeat(8, 40px);
@@ -221,13 +228,6 @@
 
   .dark {
     background-color: #b58863;
-  }
-
-  .piece {
-    width: 50px;
-    height: 50px;
-    user-select: none;
-    pointer-events: none;
   }
 
   .coordinates {
