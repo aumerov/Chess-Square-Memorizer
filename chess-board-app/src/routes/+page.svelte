@@ -221,11 +221,13 @@
   main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 2rem;
     min-height: calc(100vh - 80px);
     gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .game-status-placeholder {
@@ -238,6 +240,11 @@
   :global(body) {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+  }
+
+  :global(html) {
+    overflow-x: hidden;
   }
 
   .game-status {
@@ -371,12 +378,81 @@
 
   @media (max-width: 768px) {
     main {
-      padding: 1rem;
+      padding: 0.75rem;
+      min-height: calc(100vh - 120px);
+      gap: 0.75rem;
+      justify-content: flex-start;
+    }
+
+    .game-status-placeholder {
+      height: auto;
+      min-height: 100px;
     }
 
     .game-status {
       min-width: auto;
-      max-width: 90%;
+      max-width: 95%;
+      width: 100%;
+      padding: 0.75rem;
+    }
+
+    .game-status p {
+      font-size: 1rem;
+      margin: 0.4rem 0;
+    }
+
+    .timer-display {
+      padding: 0.4rem 0.75rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .app {
+      min-height: 100vh;
+    }
+
+    main {
+      padding: 0.5rem;
+      min-height: calc(100vh - 140px);
+      gap: 0.5rem;
+    }
+
+    .game-status-placeholder {
+      height: auto;
+      min-height: 80px;
+    }
+
+    .game-status {
+      padding: 0.5rem;
+      max-width: 100%;
+    }
+
+    .game-status p {
+      font-size: 0.9rem;
+      margin: 0.3rem 0;
+    }
+
+    .timer-display {
+      padding: 0.3rem 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .modal {
+      padding: 1.5rem;
+      margin: 1rem;
+    }
+
+    .modal h2 {
+      font-size: 1.5rem;
+    }
+
+    .end-message {
+      font-size: 1rem;
+    }
+
+    .time-result, .misclicks-result {
+      font-size: 1rem;
     }
   }
 </style>

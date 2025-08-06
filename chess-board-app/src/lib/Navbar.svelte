@@ -367,27 +367,97 @@
   @media (max-width: 768px) {
     .navbar {
       flex-direction: column;
-      gap: 1rem;
-      padding: 1rem;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .nav-brand h2 {
+      font-size: 1.2rem;
+      text-align: center;
     }
     
     .nav-controls {
       flex-wrap: wrap;
       justify-content: center;
+      gap: 0.75rem;
+      width: 100%;
     }
     
     .nav-button {
-      min-width: 100px;
+      min-width: 90px;
       white-space: nowrap;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
     }
     
     .toggle-container {
-      min-width: 140px;
+      min-width: 120px;
+    }
+    
+    .toggle-label {
+      font-size: 0.8rem;
     }
     
     .round-selector {
       flex-wrap: wrap;
       justify-content: center;
+      gap: 0.25rem;
+    }
+    
+    .round-selector label {
+      font-size: 0.8rem;
+    }
+    
+    select {
+      font-size: 0.8rem;
+      padding: 0.4rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 0.5rem;
+      gap: 0.5rem;
+    }
+    
+    .nav-brand h2 {
+      font-size: 1rem;
+    }
+    
+    .nav-controls {
+      gap: 0.5rem;
+    }
+    
+    .nav-button {
+      min-width: 80px;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.6rem;
+    }
+    
+    .toggle-container {
+      min-width: 100px;
+    }
+    
+    .toggle-switch {
+      width: 50px;
+      height: 25px;
+    }
+    
+    .toggle-slider:before {
+      height: 19px;
+      width: 19px;
+      left: 3px;
+      bottom: 3px;
+    }
+    
+    input:checked + .toggle-slider:before {
+      transform: translateX(25px);
+    }
+    
+    .toggle-text {
+      font-size: 0.6rem;
     }
   }
 </style>

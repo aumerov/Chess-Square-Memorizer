@@ -116,6 +116,68 @@
     transition: opacity 0.2s;
   }
 
+  @media (max-width: 768px) {
+    .chess-board {
+      grid-template-columns: repeat(8, 40px);
+      grid-template-rows: repeat(8, 40px);
+      border: 2px solid #312e2b;
+    }
+
+    .square {
+      width: 40px;
+      height: 40px;
+    }
+
+    .piece {
+      font-size: 28px;
+    }
+
+    .chess-board-container {
+      padding: 10px;
+      gap: 15px;
+    }
+
+    .coordinates {
+      font-size: 16px;
+    }
+
+    .game-info {
+      font-size: 18px;
+    }
+
+    .target {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .chess-board {
+      grid-template-columns: repeat(8, 35px);
+      grid-template-rows: repeat(8, 35px);
+    }
+
+    .square {
+      width: 35px;
+      height: 35px;
+    }
+
+    .piece {
+      font-size: 24px;
+    }
+
+    .coordinates {
+      font-size: 14px;
+    }
+
+    .game-info {
+      font-size: 16px;
+    }
+
+    .target {
+      font-size: 18px;
+    }
+  }
+
   .square:hover {
     opacity: 0.8;
   }
